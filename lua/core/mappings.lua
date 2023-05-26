@@ -2,52 +2,44 @@ local utils = require "core.utils"
 local get_icon = utils.get_icon
 local map = vim.keymap.set
 
-local sections = {
-  f = { desc = get_icon("Search", 1, true) .. "Find" },
-  p = { desc = get_icon("Package", 1, true) .. "Packages" },
-  l = { desc = get_icon("ActiveLSP", 1, true) .. "LSP" },
-  u = { desc = get_icon("Window", 1, true) .. "UI" },
-  b = { desc = get_icon("Tab", 1, true) .. "Buffers" },
-  bs = { desc = get_icon("Sort", 1, true) .. "Sort Buffers" },
-  d = { desc = get_icon("Debugger", 1, true) .. "Debugger" },
-  g = { desc = get_icon("Git", 1, true) .. "Git" },
-  S = { desc = get_icon("Session", 1, true) .. "Session" },
-  t = { desc = get_icon("Terminal", 1, true) .. "Terminal" },
-}
-
-map("", "<leader>f", "<cmd>lua print('find files')<cr>", sections.f)
-
--- set space as leader key
+-- Set space as leader key
 map("", "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
 
--- exit insert mode
-map("i", "jk", "<ESC>", { silent = true, desc = "exit insert mode" })
+-- Standard operations
+map("i", "jk", "<ESC>", { silent = true, desc = "Exit insert mode" })
+map("n", "<leader>w", "<cmd>w<cr>", { desc = "Save" })
+map("n", "<leader>q", "<cmd>confirm q<cr>", { silent = true, desc = "Quit" })
 
--- write (save) file
-map("n", "<leader>w", "<cmd>w<cr>", { desc = "write (save) file" })
+-- Window navigation
+map("n", "<C-h>", "<C-w>h", { silent = true, desc = "Left window navigation" })
+map("n", "<C-j>", "<C-w>j", { silent = true, desc = "Down window navigation" })
+map("n", "<C-k>", "<C-w>k", { silent = true, desc = "Up window navigation" })
+map("n", "<C-l>", "<C-w>l", { silent = true, desc = "Right window navigation" })
 
--- confirm quit
-map ("n", "<leader>q", "<cmd>confirm q<cr>", { silent = true, desc = "confirm quit" })
+-- Move lines
+map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move line down (normal)" })
+map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move line up (normal)" })
+map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move line down (insert)" })
+map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move line up (insert)" })
+map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move line down (visual)" })
+map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move line up (visual)" })
 
--- window navigation
-map("n", "<C-h>", "<C-w>h", { silent = true, desc = "left window navigation" })
-map("n", "<C-j>", "<C-w>j", { silent = true, desc = "down window navigation" })
-map("n", "<C-k>", "<C-w>k", { silent = true, desc = "up window navigation" })
-map("n", "<C-l>", "<C-w>l", { silent = true, desc = "right window navigation" })
+-- Navigate buffers
+map("n", "<S-h>", ":bprevious<CR>",  { desc = "Prev buffer" })
+map("n", "<S-l>", ":bnext<CR>",  { desc = "Next buffer" })
 
--- move lines
-map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "move down" })
-map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "move up" })
-map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "move down" })
-map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "move up" })
-map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "move down" })
-map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "move up" })
+-- Clear search with <esc>
+map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
--- navigate buffers
-map("n", "<S-h>", ":bprevious<CR>",  { desc = "prev buffer" })
-map("n", "<S-l>", ":bnext<CR>",  { desc = "next buffer" })
-
-
--- clear search with <esc>
-map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "escape and clear hlsearch" })
+-- Telescope
+map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Buffers" })
+map("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find for word under cursor" })
+map("n", "<leader>fC", "<cmd>Telescope commands<cr>", { desc = "Commands" })
+map("n", "<leader>fcb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Find in current buffer" })
+map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
+map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Live grep" })
+map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Help" })
+map("n", "<leader>fH", "<cmd>Telescope highlights<cr>", { desc = "Highlight groups" })
+map("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Keymaps" })
+map("n", "<leader>fM", "<cmd>Telescope man_pages<cr>", { desc = "Man Pages" })
