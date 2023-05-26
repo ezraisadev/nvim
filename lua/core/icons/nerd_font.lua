@@ -54,6 +54,7 @@ return {
   Spellcheck = "󰓆",
   Tab = "󰓩",
   TabClose = "󰅙",
+  Telescope = " ",
   Terminal = "",
   Window = "",
   WordFile = "󰈭",
