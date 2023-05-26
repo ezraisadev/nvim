@@ -1,6 +1,7 @@
 for _, source in ipairs {
 	"core.options",
 	"core.mappings",
+	"core.lazy",
 	"core.autocommands",
 } do
 local status_ok, fault = pcall(require, source)
