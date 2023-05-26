@@ -33,7 +33,7 @@ map("n", "<S-l>", ":bnext<CR>",  { desc = "Next buffer" })
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
 -- Telescope
-map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Buffers" })
+--map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Buffers" })
 map("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find for word under cursor" })
 map("n", "<leader>fC", "<cmd>Telescope commands<cr>", { desc = "Commands" })
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
@@ -43,3 +43,8 @@ map("n", "<leader>fH", "<cmd>Telescope highlights<cr>", { desc = "Highlight grou
 map("n", "<leader>fi", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Find in buffer" })
 map("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Keymaps" })
 map("n", "<leader>fM", "<cmd>Telescope man_pages<cr>", { desc = "Man Pages" })
+
+-- Nvim-tree
+map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle file tree" })
+map("n", "<leader>o", "<cmd>NvimTreeFocus<cr>", { desc = "Toggle file tree" })
+
