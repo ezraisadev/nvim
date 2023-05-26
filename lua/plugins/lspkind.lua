@@ -1,4 +1,5 @@
 local M = {
+
     "onsails/lspkind.nvim",
     opts = {
       mode = "symbol",
