@@ -40,3 +40,5 @@ opt.updatetime = 300
 opt.virtualedit = "block"
 opt.wrap = false
 opt.writebackup = false
+
+g.icons_enabled = true
