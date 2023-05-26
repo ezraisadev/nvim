@@ -43,3 +43,4 @@ opt.wrap = false
 opt.writebackup = false
 
 g.icons_enabled = true
+g.loaded_netrwPlugin = 1
