@@ -27,10 +27,9 @@ function M.config()
       "yaml"
     },
     highlight = { enable = true },
-    indent = { enable = true },
+    indent = { enable = false, disable = { "python", "css" } },
     incremental_selection = { enable = true },
   })
-
 end
 
 return M
