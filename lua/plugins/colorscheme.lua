@@ -1,5 +1,5 @@
 local M = {
-  "olimorris/onedarkpro.nvim",
+  "navarasu/onedark.nvim",
   lazy = false,
   priority = 1000
 }
