@@ -32,6 +32,37 @@ function M.config()
           none = " ",
         },
       },
+      icons = {
+        glyphs = {
+          default = "",
+          symlink = "",
+          folder = {
+            arrow_open = "",
+            arrow_closed = "",
+            default = "",
+            open = "",
+            empty = "",
+            empty_open = "",
+            symlink = "",
+            symlink_open = "",
+          },
+          git = {
+            unstaged = "",
+            staged = "S",
+            unmerged = "",
+            renamed = "➜",
+            untracked = "U",
+            deleted = "",
+            ignored = "◌",
+          },
+        },
+      },
+    },
+    update_focused_file = {
+      enable = true,
+      debounce_delay = 15,
+      update_root = true,
+      ignore_list = {},
     },
     actions = {
       open_file = {
