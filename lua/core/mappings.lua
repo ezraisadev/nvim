@@ -18,7 +18,7 @@ map("n", "<C-k>", "<C-w>k", { silent = true, desc = "Up window navigation" })
 map("n", "<C-l>", "<C-w>l", { silent = true, desc = "Right window navigation" })
 
 -- Move lines
-map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move line down (normal)" })
+map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move line dbdown (normal)" })
 map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move line up (normal)" })
 map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move line down (insert)" })
 map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move line up (insert)" })
@@ -26,8 +26,11 @@ map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move line down (visual)" })
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move line up (visual)" })
 
 -- Navigate buffers
-map("n", "<S-h>", ":bprevious<CR>",  { desc = "Prev buffer" })
-map("n", "<S-l>", ":bnext<CR>",  { desc = "Next buffer" })
+map("n", "<S-h>", "<cmd>bprevious<cr>",  { desc = "Prev buffer" })
+map("n", "<S-l>", "<cmd>bnext<cr>",  { desc = "Next buffer" })
+
+-- Close buffer
+map("n", "<leader>bc", "<cmd>bdelete!<cr>", { desc = "Buffer Close" })
 
 -- Clear search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
@@ -45,6 +48,6 @@ map("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Keymaps" })
 map("n", "<leader>fM", "<cmd>Telescope man_pages<cr>", { desc = "Man Pages" })
 
 -- Nvim-tree
-map("n", "<leader>e", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle file tree" })
-map("n", "<leader>o", "<cmd>NvimTreeFocus<cr>", { desc = "Toggle file tree" })
+map("n", "<leader>fe", "<cmd>NvimTreeToggle<cr>", { desc = "File Explorer" })
+map("n", "<leader>fo", "<cmd>NvimTreeFocus<cr>", { desc = "File Explorer focus" })
 
