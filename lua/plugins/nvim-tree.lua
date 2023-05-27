@@ -69,6 +69,10 @@ function M.config()
         quit_on_open = true,
       },
     },
+    view = {
+      width = 30,
+      side = "left",
+    },
   })
 end
 

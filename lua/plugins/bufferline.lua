@@ -6,7 +6,23 @@ local M = {
 }
 
 function M.config()
-  require("bufferline").setup()
+  require("bufferline").setup({
+    options = {
+      close_command = "bdelete! %d",
+      diagnostics = "nvim_lsp",
+      offsets = {
+        {
+          filetype = "NvimTree",
+          text = "File Explorer",
+          highlight =  "Directory",
+          text_align = "center",
+          padding = 0.9,
+          separator = false,
+        },
+      },
+      separator_style = "thin",
+    },
+  })
 end
 
 return M
