@@ -8,7 +8,7 @@ opt.breakindent = true
 opt.clipboard = "unnamedplus"
 opt.cmdheight = 1
 opt.completeopt = {"menuone", "noselect"}
-opt.copyindent = true
+--opt.copyindent = true
 opt.expandtab = true
 opt.fillchars = { eob = " " }
 opt.history = 100
@@ -18,7 +18,7 @@ opt.laststatus = 3
 opt.linebreak = true
 opt.mouse = "a"
 opt.number = true
-opt.preserveindent = true
+--opt.preserveindent = true
 opt.pumheight = 10
 opt.relativenumber = true
 opt.scrolloff = 8
