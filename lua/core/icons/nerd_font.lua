@@ -21,6 +21,7 @@ return {
   FileNew = "",
   FileModified = "",
   FileReadOnly = "",
+  FileTree = "󰙅",
   FoldClosed = "",
   FoldOpened = "",
   FoldSeparator = " ",
