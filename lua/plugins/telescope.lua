@@ -4,7 +4,7 @@ local M = {
   event = "Bufenter",
   dependencies = {
     { "nvim-lua/plenary.nvim" },
-    { 
+    {
       "nvim-telescope/telescope-fzf-native.nvim",
       enabled = vim.fn.executable "make" == 1,
       build = "make"
@@ -24,7 +24,7 @@ function M.config()
     },
     n = { ["q"] = actions.close },
   }
-  require("telescope").setup { 
+  require("telescope").setup {
     defaults = {
       prompt_prefix = get_icon("Telescope", 1),
       selection_caret = get_icon("Selected", 1),
