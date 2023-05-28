@@ -20,6 +20,35 @@ function M.config()
   local cmp = require("cmp")
   local luasnip = require("luasnip")
   require('luasnip.loaders.from_vscode').lazy_load()
+  local select_opts = {behavior = cmp.SelectBehavior.Select}
+
+  local kind_icons = {
+    Text = ' ',
+    Method = ' ',
+    Function = ' ',
+    Constructor = ' ',
+    Field = ' ',
+    Variable = ' ',
+    Class = ' ',
+    Interface = ' ',
+    Module = ' ',
+    Property = ' ',
+    Unit = ' ',
+    Value = ' ',
+    Enum = ' ',
+    Keyword = ' ',
+    Snippet = ' ',
+    Color = ' ',
+    File = ' ',
+    Reference = ' ',
+    Folder = ' ',
+    EnumMember = ' ',
+    Constant = ' ',
+    Struct = ' ',
+    Event = ' ',
+    Operator = ' ',
+    TypeParameter = ' ',
+  }
 
   cmp.setup{
     snippet = {
@@ -27,12 +56,13 @@ function M.config()
         luasnip.lsp_expand(args.body)
       end
     },
-    sources = {
-      {name = 'nvim_lsp', keyword_length = 1},
-      {name = 'luasnip', keyword_length = 2},
-      {name = 'buffer', keyword_length = 3},
+    sources = cmp.config.sources({
+      {name = 'nvim_lsp', priority = 1000},
+      {name = 'luasnip', keyword_length = 3},
       {name = 'path'},
-    },
+    },{
+      {name = 'buffer'},
+    }),
     mapping = {
       ['<Up>'] = cmp.mapping.select_prev_item(select_opts),
       ['<Down>'] = cmp.mapping.select_next_item(select_opts),
@@ -82,6 +112,29 @@ function M.config()
           fallback()
         end
       end, {'i', 's'}),
+    },
+    window = {
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
+      winhighlight = 'Normal:Pmenu,FloatBorder:Pmenu,Search:None',
+      col_offset = -3,
+      side_padding = 0,
+    },
+    formatting = {
+      format = function(entry, vim_item)
+        -- Kind icons
+        vim_item.kind = string.format('%s%s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+        -- Source
+        vim_item.menu = ({
+          buffer = "󰿗",
+          nvim_lsp = "󰒋",
+          luasnip = "󰇺",
+        })[entry.source.name]
+        return vim_item
+      end
+    },
+    experimental = {
+      ghost_text = true,
     },
   }
 end
