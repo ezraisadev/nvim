@@ -80,11 +80,12 @@ function M.config()
     S =  get_icon("Session", 1, true) .. "Session",
     t =  get_icon("Terminal", 1, true) .. "Terminal",
   }
-  
+
   wk.register({
     b = { name = names.b, c = names.bc},
     f = { name = names.f },
     g = { name = names.g, h = "Hunk (gitsigns)" },
+    l = { name = names.l },
     q = { name = get_icon("Quit", 1, true) .. "Quit" },
     w = { name = get_icon("Save", 1, true) .. "Save" },
   }, { prefix = "<leader>" })
