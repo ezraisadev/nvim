@@ -1,6 +1,14 @@
 local M = {
 	"neovim/nvim-lspconfig",
 	lazy = true,
+	dependencies = {
+		{
+			"folke/neodev.nvim",
+			-- event = { "BufReadPre", "BufNewFile" },
+			opts = {},
+			config = true,
+		},
+	},
 }
 function M.config()
 	local servers = {
