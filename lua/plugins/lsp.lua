@@ -74,7 +74,7 @@ function M.config()
 		})
 	end
 	local config = {
-		virtual_text = true,
+		virtual_text = false,
 		severity_sort = true,
 		float = {
 			border = "rounded",
