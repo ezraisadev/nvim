@@ -10,6 +10,7 @@ vim.g.mapleader = " "
 map("i", "jk", "<ESC>", { silent = true, desc = "Exit insert mode" })
 map("n", "<leader>w", "<cmd>w<cr>", { desc = "Save" })
 map("n", "<leader>q", "<cmd>confirm q<cr>", { silent = true, desc = "Quit" })
+map("n", "<leader>c", "<cmd>close<cr>", { silent = true, desc = "Close window" })
 
 -- Window navigation
 map("n", "<C-h>", "<C-w>h", { silent = true, desc = "Left window navigation" })
