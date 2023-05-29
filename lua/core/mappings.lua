@@ -35,6 +35,10 @@ map("n", "<leader>bc", "<cmd>bdelete!<cr>", { desc = "Buffer Close" })
 -- Clear search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
+-- Nvim-tree
+map("n", "<leader>fe", "<cmd>NvimTreeToggle<cr>", { desc = "File Explorer" })
+map("n", "<leader>fo", "<cmd>NvimTreeFocus<cr>", { desc = "File Explorer focus" })
+
 -- Telescope
 --map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Buffers" })
 map("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find for word under cursor" })
@@ -42,13 +46,15 @@ map("n", "<leader>fC", "<cmd>Telescope commands<cr>", { desc = "Commands" })
 map("n", "<leader>fd", "<cmd>Telescope diagnostics<cr>", { desc = "Find diagnostics" })
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
 map("n", "<leader>fF", "<cmd>Telescope find_files hidden=true<cr>", { desc = "Find all files" })
-map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Live grep" })
+map("n", "<leader>fg", "<cmd>Telescope git_files<cr>", { desc = "Find git files" })
 map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Help" })
 map("n", "<leader>fH", "<cmd>Telescope highlights<cr>", { desc = "Highlight groups" })
 map("n", "<leader>fi", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Find in buffer" })
 map("n", "<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Keymaps" })
 map("n", "<leader>fM", "<cmd>Telescope man_pages<cr>", { desc = "Man Pages" })
+map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "Find word in workspace" })
 
--- Nvim-tree
-map("n", "<leader>fe", "<cmd>NvimTreeToggle<cr>", { desc = "File Explorer" })
-map("n", "<leader>fo", "<cmd>NvimTreeFocus<cr>", { desc = "File Explorer focus" })
+-- Git
+map("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", { desc = "Git commits" })
+map("n", "<leader>gs", "<cmd>Telescope git_status<cr>", { desc = "Git status" })
+map("n", "<leader>gf", "<cmd>G<cr>", { desc = "Git fugitive" })
