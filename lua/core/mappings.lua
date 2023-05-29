@@ -1,4 +1,4 @@
-local utils = require "core.utils" 
+local utils = require("core.utils")
 local get_icon = utils.get_icon
 local map = vim.keymap.set
 
@@ -26,8 +26,8 @@ map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move line down (visual)" })
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move line up (visual)" })
 
 -- Navigate buffers
-map("n", "<S-h>", "<cmd>bprevious<cr>",  { desc = "Prev buffer" })
-map("n", "<S-l>", "<cmd>bnext<cr>",  { desc = "Next buffer" })
+map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
+map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 
 -- Close buffer
 map("n", "<leader>bc", "<cmd>bdelete!<cr>", { desc = "Buffer Close" })
@@ -40,6 +40,7 @@ map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsea
 map("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find for word under cursor" })
 map("n", "<leader>fC", "<cmd>Telescope commands<cr>", { desc = "Commands" })
 map("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" })
+map("n", "<leader>fF", "<cmd>Telescope find_files hidden=true<cr>", { desc = "Find all files" })
 map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Live grep" })
 map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Help" })
 map("n", "<leader>fH", "<cmd>Telescope highlights<cr>", { desc = "Highlight groups" })
@@ -50,4 +51,3 @@ map("n", "<leader>fM", "<cmd>Telescope man_pages<cr>", { desc = "Man Pages" })
 -- Nvim-tree
 map("n", "<leader>fe", "<cmd>NvimTreeToggle<cr>", { desc = "File Explorer" })
 map("n", "<leader>fo", "<cmd>NvimTreeFocus<cr>", { desc = "File Explorer focus" })
-
