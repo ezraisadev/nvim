@@ -5,6 +5,7 @@ local M = {
 }
 
 function M.config()
+	local get_icon = require("core.utils").get_icon
 	local lualine = require("lualine")
 	lualine.setup({
 		options = {
@@ -29,7 +30,11 @@ function M.config()
 			lualine_a = { "mode" },
 			lualine_b = { "branch" },
 			lualine_c = {
-				{ "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
+				{
+					"filename",
+					path = 1,
+					symbols = { modified = get_icon("FileModified"), readonly = get_icon("FileReadOnly"), unnamed = "" },
+				},
 			},
 			lualine_x = { "diff", "diagnostics" },
 			lualine_y = {
