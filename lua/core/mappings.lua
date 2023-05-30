@@ -59,3 +59,6 @@ map("n", "<leader>fw", "<cmd>Telescope live_grep<cr>", { desc = "Find word in wo
 map("n", "<leader>gc", "<cmd>Telescope git_commits<cr>", { desc = "Git commits" })
 map("n", "<leader>gs", "<cmd>Telescope git_status<cr>", { desc = "Git status" })
 map("n", "<leader>gf", "<cmd>G<cr>", { desc = "Git fugitive" })
+
+-- ToggleTerm
+map("t", "<F7>", "<cmd>ToggleTerm<cr>", { desc = "Toggle Terminal" })
