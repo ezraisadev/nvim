@@ -13,6 +13,7 @@ opt.colorcolumn = "120"
 opt.cursorline = true
 opt.expandtab = true
 opt.fillchars = { eob = " " }
+opt.formatoptions:append("t")
 opt.history = 100
 opt.ignorecase = true
 opt.infercase = true
