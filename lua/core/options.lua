@@ -40,7 +40,7 @@ opt.timeoutlen = 300
 opt.undofile = true
 opt.updatetime = 300
 opt.virtualedit = "block"
-opt.wrap = false
+opt.wrap = true
 opt.writebackup = false
 
 g.icons_enabled = true
