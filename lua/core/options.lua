@@ -36,6 +36,7 @@ opt.splitright = true
 opt.swapfile = false
 opt.tabstop = 2
 opt.termguicolors = true
+opt.textwidth = 120
 opt.timeout = true
 opt.timeoutlen = 300
 opt.undofile = true
