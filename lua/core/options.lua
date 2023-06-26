@@ -9,7 +9,7 @@ opt.clipboard = "unnamedplus"
 opt.cmdheight = 1
 opt.completeopt = { "menuone", "noselect" }
 --opt.copyindent = true
-opt.colorcolumn = "80"
+opt.colorcolumn = "120"
 opt.cursorline = true
 opt.expandtab = true
 opt.fillchars = { eob = " " }
