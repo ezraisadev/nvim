@@ -4,6 +4,7 @@ local g = vim.g
 -- reset mapleader
 g.mapleader = " "
 
+opt.autoindent = true
 opt.breakindent = true
 opt.clipboard = "unnamedplus"
 opt.cmdheight = 1

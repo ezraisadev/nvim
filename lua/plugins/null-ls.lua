@@ -49,16 +49,16 @@ function M.config()
 		end,
 		debug = false,
 		sources = {
-			--[[  formatting.prettierd.with {
-        extra_filetypes = { "toml" },
-        --extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
-      }, ]]
+			formatting.prettierd.with({
+				extra_filetypes = { "toml" },
+				--extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
+			}),
 			formatting.black.with({ extra_args = { "--fast" } }), -- python
 			formatting.stylua,
 			code_actions.eslint_d,
 			diagnostics.eslint_d,
 			diagnostics.flake8, -- python
-			diagnostics.pylint,
+			-- diagnostics.pylint,
 		},
 	})
 end

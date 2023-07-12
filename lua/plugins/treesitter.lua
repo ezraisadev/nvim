@@ -30,7 +30,7 @@ function M.config()
 			"yaml",
 		},
 		highlight = { enable = true },
-		indent = { enable = false, disable = { "python", "css" } },
+		indent = { enable = false, disable = { "python", "css", "c" } },
 		incremental_selection = { enable = true },
 		autotag = { enable = true },
 	})
